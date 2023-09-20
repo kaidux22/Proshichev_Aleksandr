@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Тетрис</title>
+</head>
+<body>
+
+    <div>
+        <h2 id="Greetings">
+            Добро пожаловать,
+        </h2>
+        <script>
+            document.getElementById("Greetings").textContent += localStorage.getItem(localStorage.length) + "!"
+        </script>
+        <h2>
+            Игра началась!
+        </h2>
+    </div>
+
+    <canvas id="field"></canvas>
+    <script></script>
+    <p id="check"></p>
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>
