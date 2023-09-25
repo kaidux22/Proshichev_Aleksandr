@@ -13,17 +13,18 @@ export default class Tetris {
                 this.mField[i][j] = 0
             }
         }
+
         this.mActiveBlock = new blocks.Hero()
         this.mNextBlock = new blocks.Smashboy()
         this.FillSpace(true)
     }
 
-    IsInField() {
+    MayMoveOn() {
         const gameField = this.mField
-        const { posX, posY, mSize, mField } = this.mActiveBlock
+        const { posX, posY, mSize, mMatrix } = this.mActiveBlock
         for (let i = 0; i < mSize; i++) {
             for (let j = 0; j < mSize; j++) {
-                if (mField[i][mSize - j - 1] && (posX - j < 0 || posX - j >= 10)) {
+                if (mMatrix[i][mSize - j - 1] && ((posX - j < 0 || posX - j >= 10 || posY + i >= 20) || gameField[posY + i][posX - j])) {
                     return false
                 }
             }
@@ -34,7 +35,7 @@ export default class Tetris {
     Left() {
         this.FillSpace(false)
         this.mActiveBlock.posX -= 1
-        if (!this.IsInField()) {
+        if (!this.MayMoveOn()) {
             this.mActiveBlock.posX += 1
         }
         this.FillSpace(true)
@@ -43,14 +44,28 @@ export default class Tetris {
     Right() {
         this.FillSpace(false)
         this.mActiveBlock.posX += 1
-        if (!this.IsInField()) {
-            this.mActiveBlock.posY -= 1
+        if (!this.MayMoveOn()) {
+            this.mActiveBlock.posX -= 1
         }
         this.FillSpace(true)
     }
 
     Drop() {
+        this.FillSpace(false)
+        while (this.MayMoveOn()) {
+            this.mActiveBlock.posY += 1
+        }
+        this.mActiveBlock.posY -= 1
+        this.FillSpace(true)
+    }
 
+    Rotate() {
+        this.FillSpace(false)
+        this.mActiveBlock.Rotate(true)
+        if (!this.MayMoveOn()) {
+            this.mActiveBlock.Rotate(false)
+        }
+        this.FillSpace(true)
     }
 
     FillSpace(draw) {
@@ -58,7 +73,7 @@ export default class Tetris {
             for (let i = 0; i < this.mActiveBlock.mSize; i++) {
                 for (let j = 0; j < this.mActiveBlock.mSize; j++) {
                     if (this.mField[this.mActiveBlock.posY + j][this.mActiveBlock.posX - i] != undefined) {
-                        this.mField[this.mActiveBlock.posY + j][this.mActiveBlock.posX - i] = this.mActiveBlock.mField[j][this.mActiveBlock.mSize - i - 1]
+                        this.mField[this.mActiveBlock.posY + j][this.mActiveBlock.posX - i] = this.mActiveBlock.mMatrix[j][this.mActiveBlock.mSize - i - 1]
                     }
                 }
             }
@@ -71,7 +86,7 @@ export default class Tetris {
                 }
             }
         }
-
+        
     }
 
     ViewPos() {
