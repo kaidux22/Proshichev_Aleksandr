@@ -1,7 +1,15 @@
-import Tetris from "./src/tetris.js";
+import Manager from "./src/manager"
 
-const game = new Tetris()
+const field = document.querySelector("#field")
+
+const game = new Manager(field)
 
 window.game = game
 
-console.log(game)
+game.Start()
+
+function reply(event) {
+    console.log("Yes", event.keyCode)
+}
+
+document.addEventListener('keydown', game.ReactToPress)
