@@ -6,10 +6,4 @@ const game = new Manager(field)
 
 window.game = game
 
-game.Start()
-
-function reply(event) {
-    console.log("Yes", event.keyCode)
-}
-
 document.addEventListener('keydown', game.ReactToPress)

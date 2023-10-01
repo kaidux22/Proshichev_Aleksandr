@@ -12,16 +12,14 @@
             Добро пожаловать,
         </h2>
         <script>
-            document.getElementById("Greetings").textContent += localStorage.getItem(localStorage.length) + "!"
+            document.getElementById("Greetings").textContent += localStorage.getItem(localStorage.length - 1) + "!"
         </script>
         <h2>
             Игра началась!
         </h2>
     </div>
 
-    <div id="field">
-
-    </div>
+    <div id="field"></div>
     <script type="module" src="main.js"></script>
 
 </body>

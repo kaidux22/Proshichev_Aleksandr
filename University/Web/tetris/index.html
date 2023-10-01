@@ -25,8 +25,9 @@
           <input type="submit" value="Начать!">
           <script>
               function saveName() {
-                  let userName = document.getElementById("user")
-                  localStorage.setItem(localStorage.length + 1, userName.value);
+                  let UserData = document.getElementById("user").value
+                  localStorage.setItem(localStorage.length + 1, UserData);
+                  localStorage.setItem(localStorage.length + 1, 0);
               }
           </script>
       </form>

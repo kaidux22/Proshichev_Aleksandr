@@ -1,49 +1,72 @@
 import Tetris from "./tetris.js";
 import GUI from "./GUI.js"
+import * as consts from "./const.js"
 
-const WIDTH = 300
-const HEIGHT = 600
-const ROWS = 20
-const COLUMNS = 10
-
-const LEFT = 37 
-const RIGHT = 39
-const DROP = 40
-const ROT = 38
 
 export default class Manager {
     constructor(elem) {
-        this.GUI = new GUI(elem, WIDTH, HEIGHT, ROWS, COLUMNS)
+        this.GUI = new GUI(elem, consts.WIDTH, consts.HEIGHT, consts.ROWS, consts.COLUMNS)
         self.GUI = this.GUI
+        this.mLevel = 1 
 
 
-        this.Tetris = new Tetris(WIDTH, HEIGHT, ROWS, COLUMNS)
+        this.Tetris = new Tetris(consts.WIDTH, consts.HEIGHT, consts.ROWS, consts.COLUMNS)
         self.Tetris = this.Tetris
 
-        this.GUI.GenerateField(self.Tetris.GetField(), self.Tetris.mActiveBlock.mColor)
+        this.GUI.GenerateField(this.Tetris.mField, this.Tetris.mLevels, this.Tetris.mScore, this.Tetris.mNextBlock)
+
+        this.StartTimer()
+    }
+
+    CheckSpeed() {
+        return this.mLevel == this.Tetris.mLevels
+    }
+
+    StartTimer() {
+        if (!this.Interval) {
+            this.Interval = setInterval(() => {
+                self.Tetris.Down()
+                self.GUI.GenerateField(self.Tetris.mField, self.Tetris.mLevels, self.Tetris.mScore, self.Tetris.mNextBlock)
+                if (!this.CheckSpeed()) {
+                    this.TimerManager()
+                }
+            }, 1000 / (2 * this.mLevel / 3)) 
+        }
+    }
+
+    StopTimer() {
+        if (this.Interval) {
+            clearInterval(this.Interval)
+            this.Interval = null
+        }
+    }
+
+    TimerManager() {
+        this.StopTimer()
+        this.mLevel = this.Tetris.mLevels
+        this.StartTimer()
+
     }
 
 
-    Start() {
-        
-    }
+
 
     ReactToPress(event) {
         switch (event.keyCode) {
-            case RIGHT:
+            case consts.RIGHT:
                 self.Tetris.Right()
                 break
-            case LEFT:
+            case consts.LEFT:
                 self.Tetris.Left()
                 break
-            case DROP:
+            case consts.DROP:
                 self.Tetris.Drop()
                 break
-            case ROT:
+            case consts.ROT:
                 self.Tetris.Rotate()
                 break
         }
-        self.GUI.GenerateField(self.Tetris.GetField(), self.Tetris.mActiveBlock.mColor)
+        self.GUI.GenerateField(self.Tetris.mField, self.Tetris.mLevels, self.Tetris.mScore, self.Tetris.mNextBlock)
     }
     
 

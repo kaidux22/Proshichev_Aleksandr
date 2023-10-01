@@ -1,13 +1,4 @@
-export const COUNT = 7
-
-export const SMASHBOY = 0
-export const TEEWEE = 1
-export const HERO = 2
-export const CLEVELANDZ = 3
-export const RHODEISLANDZ = 4
-export const BLUERICKY = 5
-export const ORANGERICKY = 6
-
+import * as consts from './const.js'
 
 export default class Block {
     mMatrix
@@ -37,46 +28,38 @@ export default class Block {
 }
 
 export class Smashboy extends Block {
-    mMatrix = [[1, 1], [1, 1]]
+    mMatrix = [[consts.SMASHBOY, consts.SMASHBOY], [consts.SMASHBOY, consts.SMASHBOY]]
     mSize = 2
-    mColor = 'yellow'
 }
 
 export class Teewee extends Block {
-    mMatrix = [[1, 1, 1], [0, 1, 0], [0, 0, 0]]
+    mMatrix = [[consts.TEEWEE, consts.TEEWEE, consts.TEEWEE], [0, consts.TEEWEE, 0], [0, 0, 0]]
     mSize = 3
-    mColor = 'pink'
-
 }
 
 export class Hero extends Block {
-    mMatrix = [[0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0]]
+    mMatrix = [[0, 0, 0, 0], [consts.HERO, consts.HERO, consts.HERO, consts.HERO], [0, 0, 0, 0], [0, 0, 0, 0]]
     mSize = 4
-    mColor = 'light-blue'
 }
 
 export class ClevelandZ extends Block {
-    mMatrix = [[1, 1, 0], [0, 1, 1], [0, 0, 0]]
+    mMatrix = [[consts.CLEVELANDZ, consts.CLEVELANDZ, 0], [0, consts.CLEVELANDZ, consts.CLEVELANDZ], [0, 0, 0]]
     mSize = 3
-    mColor = 'red'
 }
 
 export class RhodeIslandZ extends Block {
-    mMatrix = [[0, 1, 1], [1, 1, 0], [0, 0, 0]]
+    mMatrix = [[0, consts.RHODEISLANDZ, consts.RHODEISLANDZ], [consts.RHODEISLANDZ, consts.RHODEISLANDZ, 0], [0, 0, 0]]
     mSize = 3
-    mColor = 'green'
 }
 
 export class BlueRicky extends Block {
-    mMatrix = [[1, 1, 1], [0, 0, 1], [0, 0, 0]]
+    mMatrix = [[consts.BLUERICKY, consts.BLUERICKY, consts.BLUERICKY], [0, 0, consts.BLUERICKY], [0, 0, 0]]
     mSize = 3
-    mColor = 'blue'
 }
 
 export class OrangeRicky extends Block {
-    mMatrix = [[1, 1, 1], [1, 0, 0], [0, 0, 0]]
+    mMatrix = [[consts.ORANGERICKY, consts.ORANGERICKY, consts.ORANGERICKY], [consts.ORANGERICKY, 0, 0], [0, 0, 0]]
     mSize = 3
-    mColor = 'orange'
 }
 
 

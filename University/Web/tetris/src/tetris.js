@@ -1,12 +1,16 @@
 import Block, * as blocks from "./block.js"
+import * as consts from "./const.js"
 
 export default class Tetris {
     mScore = 0
     mLevels = 1
+    mLines = 0
 
     constructor(w, h, rows, colms) {
         this.mRows = rows
         this.mColumns = colms
+
+        this.mGameStatus = true
 
         this.mField = new Array(this.mRows);
 
@@ -78,10 +82,8 @@ export default class Tetris {
         this.mActiveBlock.posY += 1
         if (!this.MayMoveOn()) {
             this.mActiveBlock.posY -= 1
-            if (this.CrashInto()) {
-                this.FillSpace(true)
-                this.ChangeActiveBlock()
-            }
+            this.FillSpace(true)
+            this.ChangeActiveBlock()
         }
         this.FillSpace(true)
     }
@@ -130,37 +132,66 @@ export default class Tetris {
         
     }
 
-    GetField() {
-        return this.mField
-    }
-
     GetRandomInt(max) {
-        return Math.floor(Math.random() * max)
+        return Math.floor(Math.random() * max) + 1
     }
 
     CreateBlock() {
-        switch (this.GetRandomInt(blocks.COUNT)) {
-            case blocks.HERO:
+        switch (this.GetRandomInt(consts.COUNT)) {
+            case consts.HERO:
                 return new blocks.Hero()
-            case blocks.BLUERICKY:
+            case consts.BLUERICKY:
                 return new blocks.BlueRicky()
-            case blocks.ORANGERICKY:
+            case consts.ORANGERICKY:
                 return new blocks.OrangeRicky()
-            case blocks.CLEVELANDZ:
+            case consts.CLEVELANDZ:
                 return new blocks.ClevelandZ()
-            case blocks.RHODEISLANDZ:
+            case consts.RHODEISLANDZ:
                 return new blocks.RhodeIslandZ()
-            case blocks.TEEWEE:
+            case consts.TEEWEE:
                 return new blocks.Teewee()
-            case blocks.SMASHBOY:
+            case consts.SMASHBOY:
                 return new blocks.Smashboy()
 
         }
     }
 
     ChangeActiveBlock() {
+        this.mScore += consts.BLOCK_COST * this.mLevels
         this.mActiveBlock = this.mNextBlock
         this.mNextBlock = this.CreateBlock()
+        if (this.CrashInto()) {
+            this.GameOver()    
+        }
+        this.RemoveLine()
     }
+
+    isLine(line) {
+        for (let x = 0; x < this.mColumns; x++) {
+            if (!line[x]) {
+                return false
+            }
+        }
+        return true
+    }
+
+    RemoveLine() {
+        for (let y = 0; y < this.mRows; y++) {
+            if (this.isLine(this.mField[y])) {
+                this.mLines += 1
+                this.mLevels += Math.floor(this.mLines * 0.2)
+                this.mScore += consts.LINE_COST * this.mLevels
+                this.mField.splice(y, 1)
+                this.mField.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+            }
+        }
+    }
+
+    GameOver() {
+        this.mGameStatus = false
+        localStorage[localStorage.length] = this.mScore
+        window.location.replace('../finish.html')
+    }
+
 }
 
