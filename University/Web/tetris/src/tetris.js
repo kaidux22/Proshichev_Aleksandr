@@ -179,7 +179,7 @@ export default class Tetris {
         for (let y = 0; y < this.mRows; y++) {
             if (this.isLine(this.mField[y])) {
                 this.mLines += 1
-                this.mLevels += Math.floor(this.mLines * 0.2)
+                this.mLevels = Math.floor(this.mLines * 0.2) + 1
                 this.mScore += consts.LINE_COST * this.mLevels
                 this.mField.splice(y, 1)
                 this.mField.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])

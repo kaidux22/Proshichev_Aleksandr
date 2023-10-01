@@ -25,7 +25,34 @@
           <input type="submit" value="Начать!">
           <script>
               function saveName() {
+                  let arr = new Array(localStorage.length)
+
+                  for (let x = 0; x < arr.length; x++) {
+                      arr[x] = localStorage[x + 1]
+                  }
+
+                  console.log(arr)
+
+                  localStorage.clear()
+
                   let UserData = document.getElementById("user").value
+
+                  for (let x = 0; x < arr.length; x++) {
+                      if (UserData == arr[x]) {
+                          arr.splice(x, 2)
+                          break
+                      }
+                  }
+
+                  console.log(arr)
+
+
+                  for (let x = 0; x < arr.length; x++) {
+                      localStorage[x + 1] = arr[x] 
+                  }
+
+                  console.log(localStorage)
+
                   localStorage.setItem(localStorage.length + 1, UserData);
                   localStorage.setItem(localStorage.length + 1, 0);
               }
