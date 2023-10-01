@@ -1,19 +1,17 @@
 <!doctype html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Тетрис</title>
-  </head>
+</head>
   <body>
       <script src="localStorage.js"></script>
       <h1>
           Игра Тетрис
       </h1>
       <h2>
-          Добро пожаловать в игру Тетрис!
-          Введите свой ник:
+          Добро пожаловать в Тетрис!
       </h2>
 
 
@@ -22,7 +20,7 @@
               Введите имя:<br>
               <input placeholder="Имя пользователя" id="user" value=" "><br>
           </label>
-          <input type="submit" value="Начать!">
+          <input type="submit" value="Начать!" id="button">
           <script>
               function saveName() {
                   let arr = new Array(localStorage.length)
