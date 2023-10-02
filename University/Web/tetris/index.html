@@ -1,13 +1,60 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Тетрис</title>
+</head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+      <script src="localStorage.js"></script>
+      <h1>
+          Игра Тетрис
+      </h1>
+      <h2>
+          Добро пожаловать в Тетрис!
+      </h2>
+
+
+      <form action="main.html" method="get" onsubmit="saveName()">
+          <label>
+              Введите имя:<br>
+              <input placeholder="Имя пользователя" id="user" value=" "><br>
+          </label>
+          <input type="submit" value="Начать!" id="button">
+          <script>
+              function saveName() {
+                  let arr = new Array(localStorage.length)
+
+                  for (let x = 0; x < arr.length; x++) {
+                      arr[x] = localStorage[x + 1]
+                  }
+
+                  console.log(arr)
+
+                  localStorage.clear()
+
+                  let UserData = document.getElementById("user").value
+
+                  for (let x = 0; x < arr.length; x++) {
+                      if (UserData == arr[x]) {
+                          arr.splice(x, 2)
+                          break
+                      }
+                  }
+
+                  console.log(arr)
+
+
+                  for (let x = 0; x < arr.length; x++) {
+                      localStorage[x + 1] = arr[x] 
+                  }
+
+                  console.log(localStorage)
+
+                  localStorage.setItem(localStorage.length + 1, UserData);
+                  localStorage.setItem(localStorage.length + 1, 0);
+              }
+          </script>
+      </form>
   </body>
 </html>

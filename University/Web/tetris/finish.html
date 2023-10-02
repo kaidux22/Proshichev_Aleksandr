@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Тетрис</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1> Топ-10 игроков </h1>
+        <table id="table">
+            <tbody>
+                <tr>
+                    <td id="main">Номер</td>
+                    <td id="main">Игрок</td>
+                    <td id="main">Количество очков</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+
+        let list = new Array(localStorage.length / 2)
+
+        for (let x = 1; x <= localStorage.length; x += 2) {
+            list[x] = [localStorage[x], Number(localStorage[x + 1])]
+        }
+
+        list.sort((a, b) => { return b[1] - a[1] })
+
+        let table = document.getElementById("table")
+
+        for (let x = 0; x < Math.min(10, list.length / 2); x++) {
+            let row = table.insertRow()
+
+            let numberCell = row.insertCell()
+            let number = document.createTextNode(x + 1)
+            numberCell.appendChild(number)
+
+            let nameCell = row.insertCell()
+            let name = document.createTextNode(list[x][0])
+            nameCell.appendChild(name)
+
+            let scoreCell = row.insertCell()
+            let score = document.createTextNode(list[x][1])
+            scoreCell.appendChild(score)
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
