@@ -1,4 +1,4 @@
-import Manager from "./src/manager"
+import Manager from "./src/manager.js"
 
 const field = document.querySelector("#field")
 
