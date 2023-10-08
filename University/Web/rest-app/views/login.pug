@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Авторизация
+    body 
+        dialog(id="username" open)
+            form(method="post")
+                label(for="userName") Ваше ФИО 
+                input(type="text", placeholder="Иванов Иван Иванович", name="userName") 
+                br
+
+                label(for="userRights") Права администратора
+                input(type="checkbox", name="userRights")
+                br
+
+                input(type="submit", value="Получить доступ")

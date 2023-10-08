@@ -1,0 +1,8 @@
+include head
+
+h2 Ассортимент библиотеки
+ol 
+    each book in books 
+        li
+            a(href="/books/" + book.id)
+                #{book.title} (#{book.author})

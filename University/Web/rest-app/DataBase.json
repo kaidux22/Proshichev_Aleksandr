@@ -1,0 +1,35 @@
+{
+    "library": [
+        {
+            "id": "1",
+            "title": "Алиса в стране небес",
+            "author": "Маячтовский",
+            "dataRelease": "20.01.1043",
+            "isTaken" : "yes",
+            "period" : "1697068800000",
+            "owner" : "Прошичев Александр Владимирович"
+        },
+
+        {
+            "id": "2",
+            "title": "Мексиканская мазня",
+            "author": "Ноунейм",
+            "dataRelease": "01.01.2000",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        }, 
+
+        {
+            "id": "3",
+            "title": "Кукурзный инсульт",
+            "author": "Штовская К.В.",
+            "dataRelease": "15.12.2061",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        }
+
+
+    ]
+}

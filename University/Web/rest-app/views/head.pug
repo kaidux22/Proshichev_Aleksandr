@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title АлекБибл
+        //- link(rel="stylesheet", href="w3.css")
+        link(rel="icon", href="src/favicon.png")
+    body
+        .header
+            h1 Официальный сайт Алексанрийской библиотеки.
+            p Дата #{data}
+
+            if user.userName == "null"
+                p.
+                    Авторизуйтесь, чтобы получить права обычного пользователя или администратора!
+                form(action="login", method="get")                                                          
+                    button(type="submit")
+                        p Авторизация
+            else
+                p Добро пожаловать, #{user.userName}
+                form(action="/exit" method="post")
+                    button(type="submit")
+                        p Выход
