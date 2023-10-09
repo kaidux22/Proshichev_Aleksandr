@@ -2,19 +2,19 @@
     "library": [
         {
             "id": "1",
-            "title": "Алиса в стране небес",
-            "author": "Маячтовский",
-            "dataRelease": "20.01.1043",
+            "title": "Гарри Поттер и узник Азкабана",
+            "author": "Джоан Роулинг",
+            "dataRelease": "2019",
             "isTaken" : "yes",
-            "period" : "1697068800000",
+            "period" : "17.10.2023",
             "owner" : "Прошичев Александр Владимирович"
         },
 
         {
             "id": "2",
-            "title": "Мексиканская мазня",
-            "author": "Ноунейм",
-            "dataRelease": "01.01.2000",
+            "title": "Зелёная миля",
+            "author": "Стивен Кинг",
+            "dataRelease": "2014",
             "isTaken" : null,
             "period" : null,
             "owner" : null
@@ -22,9 +22,49 @@
 
         {
             "id": "3",
-            "title": "Кукурзный инсульт",
-            "author": "Штовская К.В.",
-            "dataRelease": "15.12.2061",
+            "title": "Унесённые ветром",
+            "author": "Маргарет Митчелл",
+            "dataRelease": "2020",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        },
+
+        {
+            "id": "4",
+            "title": "Свита короля",
+            "author": "Нора Сакавич",
+            "dataRelease": "2021",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        },
+
+        {
+            "id": "5",
+            "title": "Гарри Поттер и Принц-полукровка",
+            "author": "Джоан Роулинг",
+            "dataRelease": "2005",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        }, 
+
+        {
+            "id": "6",
+            "title": "Прислуга",
+            "author": "Кэтрин Стокетт",
+            "dataRelease": "2011",
+            "isTaken" : null,
+            "period" : null,
+            "owner" : null
+        },
+
+        {
+            "id": "7",
+            "title": "Возвращение государя",
+            "author": "Джон Р. Р. Толкиен",
+            "dataRelease": "1994",
             "isTaken" : null,
             "period" : null,
             "owner" : null

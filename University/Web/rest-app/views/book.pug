@@ -16,22 +16,50 @@ body
         if user.userRights != false
             p Книга была забронирована за пользователем #{book.owner}
 
-
-        - var days = Math.ceil((Number(book.period) - ms) / (1000 * 60 * 60 * 24))
         if user.userName == book.owner
-            p Через #{days} д. книгу требуется вернуть!
+            p #{book.period} книгу требуется вернуть!
             form(action="returnBook", method="post")
                 button(type="submit", name="book", value=num)
                     p Вернуть книгу
         else
-            p Книга появится в наличие через #{days} д.
+            p Книга появится в наличие #{book.period}
 
     dialog#update
-        form(action="updateBookInfo")
-            button() 
+        form(action="updateBookInfo", method="post")
+            label(for="title")
+                p Название книги
+            input(type="text", value=book.title, name="title") 
+
+            label(for="dataRelease")
+                p Дата выпуска
+            input(type="text", value=book.dataRelease, name="dataRelease") 
+
+            label(for="author")
+                p Автор книги
+            input(type="text", value=book.author, name="author") 
+
+            label(for="Owner")
+                p Владелец
+            input(type="Owner", value=book.owner, name="owner")
+
+            label(for="period") 
+                p Период
+            input(type="period", value=book.period, name="period")
+            br
+            
+            button(name="book", type="submit", value=num)
+                p Сохранить
+            
+            button(type="button", onclick="window.update.close()")
+                p Отменить
 
     dialog#delete
-        p Вы точно уверены?
+        p Вы точно уверены, что хотите удалить эту книгу?
+            form(action="deleteBook", method="post")
+                button(name="book", type="submit", value=num)
+                    p да
+                button(type="button", onclick="window.delete.close()")
+                    p нет
 
     if user.userRights != false
         button(onclick="window.update.showModal()")

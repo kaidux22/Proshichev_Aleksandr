@@ -1,0 +1,6 @@
+#bookList
+    ol 
+        each book in books 
+            li
+                a(href="/books/" + book.id)
+                    #{book.title} (#{book.author})

@@ -1,8 +1,39 @@
 include head
 
 h2 Ассортимент библиотеки
-ol 
-    each book in books 
-        li
-            a(href="/books/" + book.id)
-                #{book.title} (#{book.author})
+
+if user.userRights == true
+    button(onclick="window.addBook.showModal()")
+            p Добавить книгу
+    
+dialog#addBook
+    form(action="addBook", method="post")
+            label(for="title")
+                p Название книги
+            input(type="text", name="title", required) 
+
+            label(for="dataRelease")
+                p Дата выпуска
+            input(type="text", name="dataRelease", required) 
+
+            label(for="author")
+                p Автор книги
+            input(type="text", name="author", required) 
+            br
+            
+            button(name="book", type="submit", value=num)
+                p Добавить
+            
+            button(type="button", onclick="window.addBook.close()")
+                p Отменить
+
+form(name="filter")
+    label(for="list")
+        p Выберете желаемые параметры
+    select(size="1", name="list", id="filterList", form="filter",  onchange="Req(this.options[this.selectedIndex].value)")
+        option(value="byNothing") По умолчанию 
+        option(value="byTitle") От А до Я
+        option(value="byStock") Только в наличие
+        option(value="byReturnDate") По дате возврата
+
+include bookList
