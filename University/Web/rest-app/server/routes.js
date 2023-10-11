@@ -91,18 +91,17 @@ router.post("/books/updateBookInfo", urlencodedParser, (req, res) => {
     library.library[req.body.book - 1].author = req.body.author
     library.library[req.body.book - 1].dataRelease = req.body.dataRelease
 
-    if(req.body.owner != "" && req.body.period != ""){
+    if(req.body.owner && req.body.period){
         library.library[req.body.book - 1].isTaken = true
         library.library[req.body.book - 1].period = req.body.period
         library.library[req.body.book - 1].owner = req.body.owner
     }
-
-    if(req.body.owner == "" && req.bode.period == ""){
+    else{
         library.library[req.body.book - 1].isTaken = null
         library.library[req.body.book - 1].period = null
-        library.library[req.body.book - 1].owner = null
+        library.library[req.body.book - 1].owner = null 
     }
-
+    
     res.redirect("/books/" + req.body.book.toString())
 })
 
@@ -165,6 +164,10 @@ router.post("/filter", urlencodedParser, (req, res) => {
             break
     }
     res.render("bookList", {books : listOfBooks, user : userData})
+})
+
+router.get("/style.css", (req, res) => {
+    res.sendFile(path.resolve(pages, "/src/style.css"))
 })
 
 router.get("*", (req, res)=>{

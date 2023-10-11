@@ -3,16 +3,18 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         title Авторизация
     body 
         dialog(id="username" open)
             form(method="post")
                 label(for="userName") Ваше ФИО 
-                input(type="text", placeholder="Иванов Иван Иванович", name="userName") 
+                input(type="text", placeholder="Иванов Иван Иванович", name="userName", class="w3-input w3-light-grey") 
                 br
 
                 label(for="userRights") Права администратора
-                input(type="checkbox", name="userRights")
+                input(type="checkbox", name="userRights", class="w3-check w3-input")
                 br
 
-                input(type="submit", value="Получить доступ")
+                input(type="submit", value="Получить доступ", class="w3-input w3-light-grey")
