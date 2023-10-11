@@ -1,0 +1,33 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title АлекБибл
+        link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="/ajax.js")
+    body
+        .header
+            h1 Официальный сайт Алексанрийской библиотеки.
+            p Дата #{data}
+
+            if user.userName == "null"
+                p.
+                    Авторизуйтесь, чтобы получить права обычного пользователя или администратора!
+            else
+                p Добро пожаловать, #{user.userName}
+
+            form(action="/", method="get")
+                button(type="submit", class="w3-btn w3-panel w3-leftbar")
+                    p(class="fa fa-list-ol") Список книг
+
+            if user.userName == "null"
+                form(action="login", method="get")                                                          
+                    button(type="submit", class="w3-btn w3-panel w3-leftbar")
+                        p(class="fa fa-address-card") Войти
+            else
+                form(action="/exit" method="post")
+                    button(type="submit", class="w3-btn w3-panel w3-leftbar")
+                        p(class="fa fa-sign-out") Выйти
+

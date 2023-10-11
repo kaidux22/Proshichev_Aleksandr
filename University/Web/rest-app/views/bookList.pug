@@ -1,0 +1,6 @@
+#bookList
+    ol(class="w3-ul w3-card-4 w3-small w3-light-grey" style="width:50%")
+        each book in books 
+            li(class="w3-display-container")
+                a(href="/books/" + book.id)
+                    p №#{book.id} #{book.title} (#{book.author})
