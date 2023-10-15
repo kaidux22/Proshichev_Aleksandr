@@ -1,0 +1,58 @@
+{
+    "users" : [
+        {
+            "id" : "0",
+            "name" : "Александр",
+            "lastName": "Прошичев",
+            "quote": "Как отсюда выйти?",
+            "birthday" : "05.05.2003",
+            "nativeCity": "Лодейное Поле",
+            "email": "kaidux22@gmai.com",
+            "status": "blocked"
+        }, 
+
+        {
+            "id" : "1",
+            "name" : "Елена",
+            "lastName": "Найдёнова",
+            "quote": "ОГО!",
+            "birthday" : "25.07.2003",
+            "nativeCity": "Салават",
+            "email": "evnaydyonova@etu.ru",
+            "status": "confirmed"
+        }, 
+        
+        {
+            "id" : "2",
+            "name" : "Шушков",
+            "lastName": "Егор",
+            "quote": "У нас вчера была контрольная?",
+            "birthday" : "08.04.2004",
+            "nativeCity": "Луга",
+            "email": "evshushkov@etu.ru",
+            "status": "unconfirmed"
+        }, 
+
+        {
+            "id" : "3",
+            "name" : "ЛЭТИ",
+            "lastName": "СПбГЭТУ",
+            "quote": "Наш магический электротехнический",
+            "birthday" : "11.06.1891",
+            "nativeCity": "Санкт-Петербург",
+            "email": "info@etu.ru",
+            "status": "confirmed"
+        }, 
+
+        {
+            "id" : "4",
+            "name" : "Александр",
+            "lastName": "Альтмарк",
+            "quote": "Аудитория 3124",
+            "birthday" : "23.09.1543",
+            "nativeCity": "Санкт-Петербург",
+            "email": "amaltmark@etu.ru",
+            "status": "confirmed"
+        }
+    ]
+}
