@@ -11,9 +11,10 @@
     left: 1590px;
     bottom: 75px;
     background-position: 10px 10px;
-    background-image: url('search.svg');
+    background-image: url('/search.svg');
     background-repeat: no-repeat;
     padding-left: 40px;
+
 }   
 
 ::placeholder{    
@@ -30,7 +31,19 @@ ul{
     list-style-type: none;
     padding: 0;
     margin-top: 0px;
-    
+      
+    .avatar{
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        fill: #D9D9D9;
+        background-image: url('/avatar.svg');
+        position: relative;
+        left: 19px;
+        top: 14px;
+        pointer-events: none;
+    }
+
     h3{
         color: #000;
         font-family: Inter;
@@ -41,6 +54,7 @@ ul{
         position: relative;
         bottom: 90px;
         left: 131px;
+        pointer-events: none;
     }
 
     p{
@@ -53,24 +67,97 @@ ul{
         position: relative;
         bottom: 120px;
         left: 131px;
+        pointer-events: none;
     }
+
+    .btn(@x){
+        border: none;
+        outline: none;
+        display: inline-block;
+        position: relative;
+        right: 26px;
+        left: 1776px;
+        bottom: 320px;
+        width: 55px;
+        height: 55px;
+        flex-shrink: 0;
+        background-color: #ffffff00;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        background-image: @x;
+        cursor: pointer;
+    }
+
+    button.confirmed{
+        .btn(url('/confirmed-out.svg'))
+    }
+
+    button.unconfirmed{
+        .btn(url('/unconfirmed-out.svg'))
+    }
+
+    button.blocked{
+        .btn(url('/blocked-out.svg'))
+    }
+
+
+    .enter{
+        width: 1850px;
+        height: 120px;
+        flex-shrink: 0;
+        border-bottom: 2px solid #000;
+        cursor: pointer;
+    }
+
+
+    .ico(@x){
+        position: relative;
+        bottom: 365px;
+        right: 26px;
+        left: 1790px;
+        width: 31px;
+        height: 31px;
+        flex-shrink: 0;
+        background-image: @x;
+        pointer-events: none;
+    }
+
+    .confirmed-ico{
+        .ico(url('/confirmed.svg'));
+    }
+
+    .unconfirmed-ico{
+        .ico(url('/unconfirmed.svg'));
+    }
+
+    .blocked-ico{
+        .ico(url('/ban.svg'));
+    }
+
 }
 
-
-.enter{
-    width: 1850px;
-    height: 120px;
-    flex-shrink: 0;
-    border-bottom: 2px solid #000;
+li:hover{
+    background-color: #ebebeb;
 }
 
-.avatar{
-    width: 90px;
-    height: 90px;
-    flex-shrink: 0;
-    fill: #D9D9D9;
-    background-image: url('ellipse.svg');
+button.confirmed:active{
+    background-image: url('/confirmed-over.svg');
+}
+
+button.unconfirmed:active{
+    background-image: url('/unconfirmed-over.svg');
+}
+
+button.blocked:active{
+    background-image: url('/blocked-over.svg');
+}
+
+li > a {
     position: relative;
-    left: 19px;
-    top: 14px;
+    display: inline-block;
+    padding:15px 80px;
+    bottom: 224px; 
+    height: 90px;
+    width: 1850px;
 }
+
+
