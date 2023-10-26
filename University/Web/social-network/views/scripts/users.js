@@ -3,8 +3,9 @@
 function loadList() {
   $('ul').remove();
   $('body').append($("<ul></ul>"));
-  $.post("/", {
-    content: $('.search').val()
+  $.post("/usersList", {
+    content: $('.search').val(),
+    filter: "regexp"
   }).done(function (data) {
     for (var i = 0; i < data.users.length; i++) {
       var li = 'li#' + data.users[i].id;
@@ -16,7 +17,7 @@ function loadList() {
       $(li).append($("<button class=" + data.users[i].status + " id=" + data.users[i].id + "> </button>"));
       $(li).append($("<div class=" + data.users[i].status + "-ico></div>"));
       $(li + ' button').on("click", function (event) {
-        if (confirm()) switchStatus(event.currentTarget);
+        if (confirm("Вы точно уверены, что хотите поменять статус пользовате?")) switchStatus(event.currentTarget);
       });
     }
   });
@@ -24,7 +25,6 @@ function loadList() {
 function switchStatus(elem) {
   var status = "confirmed";
   if (elem.className == "confirmed") status = "blocked";
-  console.log(elem.className + '-ico');
   $('li#' + elem.id + ' button').removeClass();
   $('li#' + elem.id + ' button').addClass(status);
   $('li#' + elem.id + ' button').next().removeClass();
@@ -32,9 +32,6 @@ function switchStatus(elem) {
   $.post("/status", {
     id: elem.id
   });
-}
-function confirm() {
-  return true;
 }
 $('.header').append($("<form><input class='search' placeholder='Поиск'></form>"));
 $('input').on("keyup", function (event) {

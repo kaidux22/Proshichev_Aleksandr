@@ -5,6 +5,7 @@ const babel = require('gulp-babel')
 const cleanCSS = require('gulp-clean-css')
 const less = require('gulp-less')
 const path = require('path')
+const minify = require('gulp-minify')
 
 paths = {
     pages : "./pages/*.pug",

@@ -2,7 +2,7 @@ function loadList(){
     $('ul').remove()
 
     $('body').append($("<ul></ul>")) 
-    $.post("/", {content : $('.search').val()}).done((data) => {
+    $.post("/usersList", {content : $('.search').val(), filter : "regexp"}).done((data) => {
         for(let i = 0; i < data.users.length; i++){
 
             let li = 'li#' + data.users[i].id
@@ -15,7 +15,7 @@ function loadList(){
             $(li).append($("<div class=" + data.users[i].status + "-ico></div>"))
             
             $(li + ' button').on("click", (event) => {
-                if(confirm())
+                if(confirm("Вы точно уверены, что хотите поменять статус пользовате?"))
                     switchStatus(event.currentTarget)
             })
         }
@@ -30,7 +30,6 @@ function switchStatus(elem){
     if(elem.className == "confirmed")
         status = "blocked"
 
-    console.log(elem.className + '-ico')
     $('li#' + elem.id + ' button').removeClass()
     $('li#' + elem.id + ' button').addClass(status)
     $('li#' + elem.id + ' button').next().removeClass()
@@ -38,17 +37,10 @@ function switchStatus(elem){
     $.post("/status", {id: elem.id})
 }
 
-function confirm(){
-    return true;
-}
-
 $('.header').append($("<form><input class='search' placeholder='Поиск'></form>"))
 
 $('input').on("keyup", (event) => {
     loadList()
 })
-
-
-
 
 loadList()

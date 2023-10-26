@@ -1,4 +1,37 @@
 include include/header 
+link(rel="stylesheet", href="/profile.css")
 include include/hat
 
+.userInfo
+    .avatar
+        .user
+
+    .titles
+        h3.name Имя пользователя:
+        h3.birthday День рождения:
+        h3.nativeCity Город:
+        h3.email Почта:
+    .info
+        h3.name 
+        h3.birthday 
+        h3.nativeCity 
+        h3.email 
+
+    .menu
+        button.editInfo
+            p Инфо профиля
+        button.friendList
+            p Список друзей
+        button.news
+            p Новости
+        button.album
+            p Фотоальбом
+
+    .blocked
+        h2 Пользователь заблокирован
+
+.posts
+    h3 Новости
+
 include include/footer
+script(src="/profile.js")
