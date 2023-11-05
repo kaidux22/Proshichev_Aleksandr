@@ -1,0 +1,5 @@
+<header [quote] = "user.quote" [exit]="true"></header>
+
+<user [userData] = "user" [showAll]="false"></user>
+
+<news *ngIf="user.status != 'blocked'" [posts] = "news" author="{{user.lastName}} {{user.name}}" [author_id]="user.id" [showAll]="false"></news> 

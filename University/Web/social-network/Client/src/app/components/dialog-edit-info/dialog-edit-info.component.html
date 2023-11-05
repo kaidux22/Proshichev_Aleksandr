@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Расскажите о себе, {{ data.name }}</h2>
+<mat-dialog-content>
+    <form>
+        <div class="form">
+            <label for="name">Имя</label>
+            <input placeholder="Незаполненное поле!!!" [(ngModel)]="this.user.name" [ngClass]="{'empty' : this.user.name==''}" name="name">
+
+            <label for="lastName">Фамилия</label>
+            <input placeholder="Незаполненное поле!!!" [(ngModel)]="this.user.lastName" [ngClass]="{'empty' : this.user.lastName==''}" name="lastName">
+
+            <label for="birthday">Дата рождения</label>
+            <input placeholder="Незаполненное поле!!!" [(ngModel)]="this.user.birthday" [ngClass]="{'empty' : this.user.birthday==''}" name="birthday">
+
+            <label for="nativeCity">Город</label>
+            <input placeholder="Незаполненное поле!!!" [(ngModel)]="this.user.nativeCity" [ngClass]="{'empty' : this.user.nativeCity==''}" name="nativeCity">
+
+            <label for="quote">Любимая цитата</label>
+            <input placeholder="Незаполненное поле!!!" [(ngModel)]="this.user.quote" [ngClass]="{'empty' : this.user.quote==''}" name="quote">
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="this.user" [disabled]="IsEmpty()" [ngClass]="{'disable': IsEmpty()}">Сохранить</button>
+    <button mat-button [mat-dialog-close] ="null">Отменить</button>
+</mat-dialog-actions>

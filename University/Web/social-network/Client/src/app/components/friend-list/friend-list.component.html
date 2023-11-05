@@ -1,0 +1,39 @@
+<div class="friend-list">
+    <ul>
+        <input class="search" placeholder="Поиск" (keyup)="Search($event)" [(ngModel)]="this.search">
+        <li><h2>Мои Друзья</h2></li>
+        <li *ngIf="this.friends.length == 0"><h1>Никого не нашлось :(</h1></li>
+        <li *ngFor="let user of friends; let idx = index" class="enter" [ngClass]="{'selected': this.chosen==user.id}">
+            <div [ngClass]="{'avatar' : true, 'friend-ban': user.status=='blocked'}"></div>
+            <h3>{{user.lastName}} {{user.name}}</h3>
+            <p>{{user.quote}}</p>
+            <a class="chatRef" (click)="ChooseChat(user)"></a>
+            <div class="menu">
+                <button class="confirmed"></button>
+                <div class="drop-content">
+                <a *ngFor="let option of ['Перейти в профиль', 'Удалить из друзей']" (click)="ChooseMenu(option, user)">
+                    {{option}}
+                </a>
+            </div>
+            </div>
+        </li>
+
+        <li><h2>Глобальный поиск</h2></li>
+        <li *ngIf="this.nonames.length == 0"><h1>Никого не нашлось :(</h1></li>
+        <li *ngFor="let user of nonames; let idx = index" class="enter" [ngClass]="{'selected': this.chosen==user.id}">
+            <div class="avatar"></div>
+            <h3>{{user.lastName}} {{user.name}}</h3>
+            <p>{{user.quote}}</p>
+            <a class="chatRef" (click)="ChooseChat(user)"></a>
+            <div class="menu">
+                <button class="unconfirmed"></button>
+                <div class="drop-content">
+                <a *ngFor="let option of ['Перейти в профиль', 'Добавить в друзья']" (click)="ChooseMenu(option, user)">
+                    {{option}}
+                </a>
+            </div>
+            </div>
+        </li>
+        <li></li>
+    </ul>
+</div>
