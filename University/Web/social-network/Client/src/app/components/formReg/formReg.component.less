@@ -1,0 +1,100 @@
+dialog{
+    position: relative;
+    width: 1000px;
+    height: auto;
+    left: 550px;
+    border: 0;
+    margin-top: 50px;
+
+    .mode{
+        width: 800px;
+ 
+
+        button{
+            width: 200px;
+            height: 40px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            font-size: 16px;
+            border: 0px;
+            background: #ED5500;
+            color: white;
+            background-position: 10px 10px; 
+            cursor: default;
+            pointer-events: none;
+        }   
+
+        button.enter{
+            position: relative;
+            left: 10%;
+        }
+
+        button.reg{
+            position: relative;
+            left: 40%;
+        }
+        
+        button.active{
+            background-color: #c9c9c9;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        button:active{
+            background-color: #F3F3F3;
+        }
+    }
+
+    .form{
+        border: 2px solid #ED5500;
+        border-radius: 10px;
+        background-color: #F3F3F3;
+        width: 800px;
+        height: auto;
+        position: relative;
+        bottom: 7px;
+
+        input{
+            margin-left: 100px;
+            margin-top: 30px;
+            margin-right: 100px;
+            margin-bottom: 15px;
+            width: 600px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            font-size: 20px;
+            border: 0px;
+            background: #ffffff;
+            cursor: text;
+            padding-left: 20px;
+            border: 2px solid #ED5500;
+        }
+
+        button{
+            width: 200px;
+            height: 40px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            font-size: 16px;
+            border: 0px;
+            cursor: pointer;
+            position: relative;
+            left: 285px;
+            margin: 10px;
+            background: #ED5500;
+            color: white;
+        }
+
+        p{
+            width: 800px;
+            height: 40px;
+            flex-shrink: 0;
+            font-size: 16px;
+            color: red;
+            position: relative;
+            text-align: center;
+
+        }
+    }
+}

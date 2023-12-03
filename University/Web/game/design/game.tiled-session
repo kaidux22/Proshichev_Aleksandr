@@ -1,0 +1,60 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.json",
+    "expandedProjectPaths": [
+        "1",
+        "."
+    ],
+    "fileStates": {
+        "1/map.json": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 253.3333333333333,
+                "y": 237
+            }
+        },
+        "1/tileset.json": {
+            "scaleInDock": 1
+        },
+        "map.json": {
+            "scale": 2,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 223,
+                "y": 206.25
+            }
+        },
+        "spritesheet.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset.json": {
+            "scaleInDock": 1
+        }
+    },
+    "last.externalTilesetPath": "/home/kaidux22/Desktop/git_work/Proshichev_Aleksandr/University/Web/game/design",
+    "last.imagePath": "/home/kaidux22/Desktop/git_work/Proshichev_Aleksandr/University/Web/game/design/player",
+    "map.height": 25,
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 25,
+    "openFiles": [
+        "map.json"
+    ],
+    "project": "game.tiled-project",
+    "recentFiles": [
+        "map.json",
+        "spritesheet.json",
+        "1/map.json"
+    ],
+    "tileset.lastUsedFormat": "json",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

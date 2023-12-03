@@ -1,0 +1,27 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="mail-plus" clip-path="url(#clip0_100_17)">
+<g id="Ellipse 3" filter="url(#filter0_d_100_17)">
+<path d="M44 21C44 32.0457 35.0457 41 24 41C12.9543 41 4 32.0457 4 21C4 9.95431 12.9543 1 24 1C35.0457 1 44 9.95431 44 21Z" fill="#ED5500"/>
+<path d="M44 21C44 32.0457 35.0457 41 24 41C12.9543 41 4 32.0457 4 21C4 9.95431 12.9543 1 24 1C35.0457 1 44 9.95431 44 21Z" fill="#ED5500"/>
+</g>
+<path id="Vector" d="M36.2105 22.3158V13.4737C36.2105 12.8037 35.9532 12.1611 35.4953 11.6873C35.0373 11.2136 34.4161 10.9474 33.7684 10.9474H14.2316C13.5839 10.9474 12.9627 11.2136 12.5048 11.6873C12.0468 12.1611 11.7895 12.8037 11.7895 13.4737V28.6316C11.7895 30.0211 12.8884 31.1579 14.2316 31.1579H24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M36.2105 15.1579L25.2577 22.3627C24.8807 22.6072 24.4449 22.7368 24 22.7368C23.5552 22.7368 23.1193 22.6072 22.7423 22.3627L11.7895 15.1579" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M32.8422 26.1053V33.6842" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M28.6316 29.4737H36.2105" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_100_17" x="0" y="1" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_100_17"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_100_17" result="shape"/>
+</filter>
+<clipPath id="clip0_100_17">
+<rect width="48" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>

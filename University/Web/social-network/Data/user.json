@@ -1,0 +1,102 @@
+{
+    "users" : [
+        {
+            "id" : "0",
+            "role": "admin",
+            "name" : "Александр",
+            "lastName": "Прошичев",
+            "quote": "Как отсюда выйти?",
+            "birthday" : "05.05.2003",
+            "nativeCity": "Лодейное Поле",
+            "email": "kaidux22@gmail.com",
+            "status": "confirmed",
+            "friends" : ["1", "2", "3", "5"],
+            "password": "0505"
+        }, 
+
+        {
+            "id" : "1",
+            "role": "user",
+            "name" : "Елена",
+            "lastName": "Найдёнова",
+            "quote": "ОГО!",
+            "birthday" : "25.07.2003",
+            "nativeCity": "Салават",
+            "email": "evnaydyonova@etu.ru",
+            "status": "confirmed",
+            "friends" : ["0", "2", "3", "4"],
+            "password": "5962"
+        }, 
+        
+        {
+            "id" : "2",
+            "role": "user",
+            "name" : "Егор",
+            "lastName": "Шушков",
+            "quote": "У нас вчера была контрольная?",
+            "birthday" : "08.04.2004",
+            "nativeCity": "Луга",
+            "email": "evshushkov@etu.ru",
+            "status": "unconfirmed",
+            "friends" : ["0", "1", "3"],
+            "password": "3356"
+        }, 
+
+        {
+            "id" : "3",
+            "role": "user",
+            "name" : "ЛЭТИ",
+            "lastName": "СПбГЭТУ",
+            "quote": "Наш магический электротехнический",
+            "birthday" : "11.06.1891",
+            "nativeCity": "Санкт-Петербург",
+            "email": "info@etu.ru",
+            "status": "confirmed",
+            "friends" : ["0", "1", "2", "4", "5"],
+            "password": "8758"
+        }, 
+
+        {
+            "id" : "4",
+            "role": "user",
+            "name" : "Александр",
+            "lastName": "Альтмарк",
+            "quote": "Аудитория 3124",
+            "birthday" : "23.09.1543",
+            "nativeCity": "Санкт-Петербург",
+            "email": "amaltmark@etu.ru",
+            "status": "blocked",
+            "friends" : ["2", "3"],
+            "password": "3124"
+        },
+
+        {
+            "id" : "5",
+            "role": "user",
+            "name" : "Диана",
+            "lastName": "Дубиницкая",
+            "quote": "Всё очень плохо!",
+            "birthday" : "10.04.2005",
+            "nativeCity": "Гатчина",
+            "email": "dubinickaadiana@gmail.com",
+            "status": "confirmed",
+            "friends" : ["0", "3"],
+            "password": "6404"
+        },
+
+        {
+            "id" : "6",
+            "role": "user",
+            "name" : "Андрей",
+            "lastName": "Колпаков",
+            "quote": "ОК",
+            "birthday" : "04.12.1986",
+            "nativeCity": "Санкт-Петербург",
+            "email": "askolpakov@etu.ru",
+            "status": "confirmed",
+            "friends" : ["0", "1", "2", "3"],
+            "password": "2222"
+        }
+    ]
+}
+

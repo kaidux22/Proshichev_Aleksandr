@@ -1,0 +1,26 @@
+<ul>
+    <h3>Новости</h3>
+
+    
+    <div class="NewPost" *ngIf="showAll">
+        <li class="enter">
+                <input placeholder="Что нового?" [(ngModel)]="this.header" name="header" (focus)="isEmpty=false" (blur)="isEmpty=true" class="header" maxlength="60">
+                <div class="postText">
+                    <textarea *ngIf="!IsEmpty()" placeholder="Как это было?" [(ngModel)]="this.mainBlock" 
+                    name="mainBlock" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"></textarea>
+                </div>
+                <p *ngIf="!IsEmpty()"> </p>
+                <button *ngIf="this.header!='' && this.mainBlock!=''" class="SharePost" (click)="AddPost()">Поделиться</button>
+        </li>
+    </div>
+
+    <li *ngFor="let post of posts; let idx = index" [ngClass]="{'blocked': post.status=='blocked', 'enter': true}">
+        <div class={{post.status}} id={{idx}} class="button">
+            <button class={{post.status}} (click)="EditPost(idx)" *ngIf="showAll"></button>
+        </div>
+
+        <h3 id={{idx}}>{{post.title}}</h3>
+        <pre id={{idx}}>{{post.text}}</pre>
+        <p id={{idx}}>@{{post.author}}</p>
+    </li>
+</ul>
