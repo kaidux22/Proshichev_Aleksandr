@@ -1,0 +1,31 @@
+<div class="userInfo">
+    <div class="avatar">
+        <img *ngIf="userData.status != 'blocked'" src="http://localhost:3000/avatar{{userData.id}}.jpg" (click)="UploadPhoto()">
+        <img *ngIf="userData.status == 'blocked'" src="http://localhost:3000/avatar-1.jpg">
+    </div>
+
+    <div *ngIf="userData.status != 'blocked'" class="titles">
+        <h3 class="name">Имя пользователя:</h3>
+        <h3 class="birthday">День рождения:</h3>
+        <h3 class="nativeCity">Город:</h3>
+        <h3 class="email">Почта:</h3>
+    </div>
+
+    <div *ngIf="userData.status != 'blocked'" class="info">
+        <h3 class="name"> {{ userData.lastName }} {{ userData.name }} <i *ngIf="userData.role == 'admin'">Admin</i></h3>
+        <h3 class="birthday"> {{ userData.birthday }} </h3>
+        <h3 class="nativeCity"> {{ userData.nativeCity }} </h3>
+        <h3 class="email">{{ userData.email }}</h3>
+    </div>
+
+    <div *ngIf="userData.status != 'blocked' && showAll" class="menu">
+        <button class="editInfo" (click)="OpenEditInfo()"><p>Инфо профиля</p></button>
+        <button class="friendList" (click)="router.navigate(['/user', userData.id, 'friends'])"><p>Список друзей</p></button>
+        <button class="news" (click)="router.navigate(['/user', userData.id, 'feed'])"><p>Новости</p></button>
+        <button *ngIf="userData.role == 'admin'" class="chngMd" (click)="AdminMode()"><p>Администрировать</p></button>
+    </div>
+
+    <div *ngIf="userData.status == 'blocked'" class="blocked">
+        <h2>Пользователь заблокирован</h2>
+    </div>
+</div>

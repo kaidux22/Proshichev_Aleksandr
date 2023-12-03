@@ -1,0 +1,148 @@
+.title{
+    font-style: italic !important;
+}
+
+.userInfo{
+    width: 1850px;
+    height: 274px;
+    flex-shrink: 0;
+    border-bottom: 2px solid #000;
+
+    .editWindow{
+        display:block;
+        position:absolute;
+        top:0px;
+        left:0px;
+      }
+}
+
+.avatar{
+    width: 250px;
+    height: 250px;
+    margin-left: 59px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    clip-path: circle(50%);
+
+    img{
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+}
+
+.titles{
+    margin-left: 400px;
+    position: relative;
+    bottom: 274px;
+}
+
+.info{
+    margin-left: 711px;
+    position: relative;
+    bottom: 467px;
+}
+
+h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h3.name{
+    margin-top: 34px;
+
+    i{
+        color: #dddcdc;
+    }
+}
+
+.menu{
+    margin-left: 1570px;
+    position: relative;
+    bottom: 650px;
+    margin-top: 27px;
+    width: 237px;
+    height: 196px;
+
+    .btn(@x){
+        border: none;
+        outline: none;
+        width: 237px;
+        height: 40px;
+        flex-shrink: 0;
+        margin-bottom: 12px;
+        border-radius: 16px;
+        background: #F3F3F3;
+        background-image: @x;
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        p{
+            text-align: left;
+            padding-left: 40px;
+        }
+    }
+
+    button.editInfo{
+        .btn(url("http://localhost:3000/editInfo.svg"))
+
+    }
+    
+    button.friendList{
+        .btn(url("http://localhost:3000/friendList.svg"))
+    }
+
+    button.news{
+        .btn(url("http://localhost:3000/news.svg"))
+    }
+
+    button.role{
+        .btn(url("http://localhost:3000/addAdmin.svg"))
+    }
+
+    button.chngMd{
+        .btn(url("http://localhost:3000/changeMode.svg"))
+    }
+
+}
+
+div.blocked{
+    background-image: url("http://localhost:3000/hugeBan.svg");
+    background-repeat: no-repeat;
+    height: 155px;
+    position: relative;
+    margin-left: 600px;
+    bottom: 200px;
+}
+
+h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #D3D3D3;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    position: relative;
+    margin-left: 125px;
+    top: 25px;
+}
+
+
+
+

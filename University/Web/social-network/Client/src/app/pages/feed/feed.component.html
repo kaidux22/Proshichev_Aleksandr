@@ -1,0 +1,11 @@
+<header quote="Новости друзей" [exit]="true"></header>
+
+<ul>
+    <h3>Новости друзей</h3>
+
+    <li *ngFor="let post of posts; let idx = index" [ngClass]="{'blocked': post.status=='blocked', 'enter': true}">
+        <h3 id={{idx}}>{{post.title}}</h3>
+        <pre id={{idx}}>{{post.text}}</pre>
+        <p id={{idx}}>@{{post.author}}</p>
+    </li>
+</ul>
