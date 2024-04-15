@@ -19,4 +19,5 @@
 	- [Курсовая работа](https://github.com/kaidux22/Proshichev_Aleksandr/tree/main/University/Course%20work%20on%20discovering%20the%20data%20structures) по исследованию структур данных на языке Python
 	- [Победа](http://entroforce.ru/lab#scudem2022) в международной математической олимпиаде SCUDEM 
 	- [Исследовательская работа](http://entroforce.ru/lab#grace-modeling) "Вычисление гравитационного потенциала по дифференциальным межспутниковым измерениям"
+	- [Проект](https://github.com/kaidux22/Proshichev_Aleksandr/tree/main/University/Fake-reviews%20detector) "Детекция сгенерированных отзывов" в рамках Студкемпа от Яндекса на базе ВШЭ
 	
